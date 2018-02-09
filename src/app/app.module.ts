@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,6 +16,7 @@ import { PhotosProvider } from '../providers/photos/photos';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -25,8 +27,10 @@ import { PhotosProvider } from '../providers/photos/photos';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PhotosProvider
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    PhotosProvider,
+    HttpClientModule,
+    HttpClient
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -11,7 +11,18 @@ import { Injectable } from '@angular/core';
 export class PhotosProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello PhotosProvider Provider');
+
+  }
+
+  public getAlbums() {
+    return fetch('https://jsonplaceholder.typicode.com/albums')
+      .then(response => response.json());
+  }
+
+  getPhoto(id) {
+    return fetch('https://jsonplaceholder.typicode.com/photo/' + id)
+      .then(response => response.json())
+      .then(json => console.log(json))
   }
 
 }
