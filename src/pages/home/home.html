@@ -7,6 +7,14 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button block *ngFor="let album of albums" (click="showPhoto()g" )>{{album.title}}</button>
+  <button ion-button block *ngFor="let album of albums" (click)="showPhoto(album.id)">{{album.title}}</button>
+  <!-- <ion-card>
+    <img src="{{photos[0].url}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{photos[0].title}}
+      </ion-card-title>
 
+    </ion-card-content>
+  </ion-card> -->
 </ion-content>

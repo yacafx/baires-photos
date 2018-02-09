@@ -20,9 +20,8 @@ export class PhotosProvider {
   }
 
   getPhoto(id) {
-    return fetch('https://jsonplaceholder.typicode.com/photo/' + id)
-      .then(response => response.json())
-      .then(json => console.log(json))
+    return fetch('https://jsonplaceholder.typicode.com/photos?albums=' + id)
+      .then(response => response.json());
   }
 
 }
